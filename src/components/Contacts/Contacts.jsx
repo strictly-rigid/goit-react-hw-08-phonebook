@@ -6,7 +6,7 @@ import {
   selectIsLoading,
 } from 'redux/selectors';
 import { fetchContacts } from 'redux/operations';
-import ContactListItem from './ContactListItem/ContactListItem';
+import ContactListItem from '../ContactListItem/ContactListItem';
 import css from './Contacts.module.css';
 
 function Contacts() {
