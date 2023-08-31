@@ -43,6 +43,10 @@ const authSlice = createSlice({
 
 export const authReducer = authSlice.reducer;
 
+// slavkothebest
+// slavkothebest987@mail.com
+// slavkothebest987
+
 // import { createSlice } from '@reduxjs/toolkit';
 // import { fetchContacts, addContact, deleteContact } from '../operations';
 
