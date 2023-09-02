@@ -15,9 +15,8 @@ export default function ContactsPage() {
 
   return (
     <>
-      <title>Your tasks</title>
-
       <ContactsEditor />
+      <p>Your contacts</p>
       <div>{isLoading && 'Request in progress...'}</div>
       <ContactsList />
     </>
