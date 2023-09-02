@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter } from 'redux/selectors';
-import { setFilter } from 'redux/filterSlice';
+import { setFilter } from 'redux/contacts/contactsSlice';
 import css from './Filter.module.css';
 
 function Filter() {
@@ -8,7 +8,7 @@ function Filter() {
   const filter = useSelector(selectFilter);
 
   const handleFilterChange = event => {
-    dispatch(setFilter(event.target.value.trim()));
+    dispatch(setFilter(event.target.value));
   };
 
   return (
