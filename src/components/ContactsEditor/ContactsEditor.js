@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectAllContacts } from 'redux/contacts/selectors';
 import css from './ContactsEditor.module.css';
+import { FormControl, InputLabel, Input, Button } from '@mui/material';
 
 export const ContactsEditor = () => {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ export const ContactsEditor = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const form = e.currentTarget;
+
     const newContact = {
       name: name,
       number: number,
@@ -26,7 +27,9 @@ export const ContactsEditor = () => {
       alert('This contact already exists!');
     } else {
       dispatch(addContact(newContact));
-      form.reset();
+
+      setName('');
+      setNumber('');
       return;
     }
   };
@@ -42,9 +45,10 @@ export const ContactsEditor = () => {
 
   return (
     <form className={css.form} onSubmit={handleSubmit}>
-      <label className={css.formLabel} htmlFor="name">
-        Name
-        <input
+      <FormControl>
+        <InputLabel htmlFor="name">Name</InputLabel>
+        <Input
+          id="name"
           type="text"
           name="name"
           value={name}
@@ -53,11 +57,12 @@ export const ContactsEditor = () => {
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
-      </label>
+      </FormControl>
 
-      <label className={css.formLabel} htmlFor="number">
-        Number
-        <input
+      <FormControl>
+        <InputLabel htmlFor="number">Number</InputLabel>
+        <Input
+          id="number"
           type="tel"
           name="number"
           value={number}
@@ -66,11 +71,11 @@ export const ContactsEditor = () => {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-      </label>
+      </FormControl>
 
-      <button type="submit" className={css.formButton}>
+      <Button type="submit" variant="contained" color="primary">
         Add contact
-      </button>
+      </Button>
     </form>
   );
 };
