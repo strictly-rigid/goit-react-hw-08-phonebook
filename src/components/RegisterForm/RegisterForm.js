@@ -5,24 +5,12 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-const defaultTheme = createTheme({
-  palette: {
-    primary: {
-      main: '#003f88',
-    },
-    secondary: {
-      main: '#002855',
-    },
-  },
-});
+import { ThemeProvider } from '@mui/material/styles';
+import defaultTheme from 'materialUI/defaultTheme';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
