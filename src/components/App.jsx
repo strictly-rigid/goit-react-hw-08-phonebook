@@ -55,17 +55,3 @@ export default function App() {
     </Routes>
   );
 }
-
-// export default function App() {
-//   return (
-//     <>
-//       <div className={css.appContainer}>
-//         <h1 className={css.appTitle}>Phonebook</h1>
-//         <Form />
-//         <h2 className={css.contactsTitle}>Contacts</h2>
-//         <Filter />
-//         <Contacts />
-//       </div>
-//     </>
-//   );
-// }
