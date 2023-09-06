@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectAllContacts } from 'redux/contacts/selectors';
 import css from './ContactsEditor.module.css';
-import { FormControl, InputLabel, Input, Button, Box } from '@mui/material';
+import { FormControl, InputLabel, Input, Button } from '@mui/material';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 
 export const ContactsEditor = () => {

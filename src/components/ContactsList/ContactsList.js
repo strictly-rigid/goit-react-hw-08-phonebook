@@ -8,7 +8,6 @@ import {
 import css from './ContactsList.module.css';
 import ContactListItem from '../ContactListItem/ContactListItem';
 import List from '@mui/material/List';
-import ContactPageIcon from '@mui/icons-material/ContactPage';
 
 export const ContactsList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
