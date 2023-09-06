@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectAllContacts } from 'redux/contacts/selectors';
 import css from './ContactsEditor.module.css';
-import { FormControl, InputLabel, Input, Button } from '@mui/material';
+import { FormControl, InputLabel, Input, Button, Box } from '@mui/material';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 
 export const ContactsEditor = () => {
   const dispatch = useDispatch();
@@ -45,7 +46,7 @@ export const ContactsEditor = () => {
 
   return (
     <form className={css.form} onSubmit={handleSubmit}>
-      <FormControl>
+      <FormControl sx={{ margin: '40px 0 ' }}>
         <InputLabel htmlFor="name">Name</InputLabel>
         <Input
           id="name"
@@ -59,7 +60,7 @@ export const ContactsEditor = () => {
         />
       </FormControl>
 
-      <FormControl>
+      <FormControl sx={{ margin: '40px 0 ' }}>
         <InputLabel htmlFor="number">Number</InputLabel>
         <Input
           id="number"
@@ -72,10 +73,17 @@ export const ContactsEditor = () => {
           required
         />
       </FormControl>
-
-      <Button type="submit" variant="contained" color="primary">
-        Add contact
-      </Button>
+      <FormControl sx={{ margin: '30px 0 ' }}>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          startIcon={<PersonAddIcon />}
+          sx={{ height: '50px', marginLeft: '15px' }}
+        >
+          Add contact
+        </Button>
+      </FormControl>
     </form>
   );
 };

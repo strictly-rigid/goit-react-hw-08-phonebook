@@ -93,7 +93,7 @@ export const LoginForm = () => {
             >
               Sign In
             </Button>
-            <Grid container>
+            <Grid container justifyContent="center">
               <Grid item>
                 <RouterLink to="/register" variant="body2">
                   {"Don't have an account? Sign Up"}

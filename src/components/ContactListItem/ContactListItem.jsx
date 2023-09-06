@@ -6,14 +6,19 @@ import {
   ListItemText,
   ListItemSecondaryAction,
   Button,
+  ListItemIcon,
 } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
 
 const ContactListItem = ({ contact }) => {
   const dispatch = useDispatch();
 
   return (
     <ListItem>
+      <ListItemIcon>
+        <ContactPageIcon style={{ color: 'black' }} />
+      </ListItemIcon>
       <ListItemText primary={`${contact.name} : ${contact.number}`} />
       <ListItemSecondaryAction>
         <Button

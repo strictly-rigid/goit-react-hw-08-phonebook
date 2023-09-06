@@ -11,6 +11,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { ThemeProvider } from '@mui/material/styles';
 import defaultTheme from 'materialUI/defaultTheme';
+import Grid from '@mui/material/Grid';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -91,6 +93,13 @@ export const RegisterForm = () => {
             >
               Sign Up
             </Button>
+            <Grid container justifyContent="center">
+              <Grid item>
+                <RouterLink to="/login" variant="body2">
+                  {'Already have an account? Sign In'}
+                </RouterLink>
+              </Grid>
+            </Grid>
           </Box>
         </Box>
       </Container>

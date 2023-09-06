@@ -5,6 +5,7 @@ import { ContactsEditor } from 'components/ContactsEditor/ContactsEditor';
 import { fetchContacts } from 'redux/contacts/operations';
 import { selectLoading } from 'redux/contacts/selectors';
 import { setFilter } from 'redux/contacts/contactsSlice';
+import { Input, Typography } from '@mui/material';
 
 export default function ContactsPage() {
   const dispatch = useDispatch();
@@ -21,9 +22,13 @@ export default function ContactsPage() {
   return (
     <>
       <ContactsEditor />
-      <p>Your contacts</p>
-      <input
+      <Typography variant="h4" sx={{ margin: '20px 0 ' }}>
+        Your Contacts
+      </Typography>
+
+      <Input
         type="text"
+        name="filter"
         placeholder="Search contacts by name"
         onChange={handleFilterChange}
       />

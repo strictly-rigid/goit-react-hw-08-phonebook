@@ -3,7 +3,8 @@ import { logOut } from 'redux/auth/operations';
 import { useAuth } from 'hooks';
 import css from './UserMenu.module.css';
 import Button from '@mui/material/Button';
-// import defaultTheme from 'materialUI/defaultTheme';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 export const UserMenu = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,12 @@ export const UserMenu = () => {
 
   return (
     <div className={css.wrapper}>
-      <p className={css.useremail}>{user.email}</p>
+      <Box>
+        <Typography>
+          Hello, <b>{user.email}</b>
+        </Typography>
+      </Box>
+
       <Button
         variant="contained"
         sx={{
@@ -19,6 +25,7 @@ export const UserMenu = () => {
           '&:hover': {
             backgroundColor: 'secondary',
           },
+          marginRight: '12px',
         }}
         onClick={() => dispatch(logOut())}
       >
