@@ -1,6 +1,8 @@
 import React from 'react';
-import Typography from '@mui/material/Typography'; // Import Typography from Material UI
+import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper';
 import backgroundImage from '../images/bg-image.jpg';
+import { useAuth } from 'hooks';
 
 const styles = {
   container: {
@@ -13,6 +15,7 @@ const styles = {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     borderRadius: '10px',
+    padding: '20px', // Add padding to the Paper component
   },
   title: {
     fontWeight: 500,
@@ -29,16 +32,16 @@ const styles = {
 };
 
 export default function Home() {
+  const { isLoggedIn } = useAuth();
   return (
-    <div style={styles.container}>
-      {/* Use Typography components for better text styling */}
+    <Paper elevation={3} style={styles.container}>
       <Typography variant="h1" style={styles.title}>
         Welcome to the Homepage of your Contacts App
       </Typography>
       <Typography variant="body1" style={styles.subtitle}>
-        Please sign up or log in
+        {isLoggedIn ? '' : 'Please sign up or log in'}
       </Typography>
-    </div>
+    </Paper>
   );
 }
 
@@ -68,6 +71,49 @@ export default function Home() {
 //     <div style={styles.container}>
 //       <h1 style={styles.title}>Welcome to the Homepage of your Contacts App</h1>
 //       <p>Please sign up or log in</p>
+//     </div>
+//   );
+// }
+
+// import React from 'react';
+// import Typography from '@mui/material/Typography';
+// import backgroundImage from '../images/bg-image.jpg';
+
+// const styles = {
+//   container: {
+//     minHeight: 'calc(100vh - 50px)',
+//     display: 'flex',
+//     flexDirection: 'column',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//     backgroundImage: `url(${backgroundImage})`,
+//     backgroundSize: 'cover',
+//     backgroundPosition: 'center',
+//     borderRadius: '10px',
+//   },
+//   title: {
+//     fontWeight: 500,
+//     fontSize: 48,
+//     textAlign: 'center',
+//     color: 'white',
+//     marginBottom: '16px',
+//     paddingLeft: '10px',
+//   },
+//   subtitle: {
+//     fontSize: 18,
+//     color: 'white',
+//   },
+// };
+
+// export default function Home() {
+//   return (
+//     <div style={styles.container}>
+//       <Typography variant="h1" style={styles.title}>
+//         Welcome to the Homepage of your Contacts App
+//       </Typography>
+//       <Typography variant="body1" style={styles.subtitle}>
+//         Please sign up or log in
+//       </Typography>
 //     </div>
 //   );
 // }

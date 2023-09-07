@@ -8,6 +8,7 @@ import {
 import css from './ContactsList.module.css';
 import ContactListItem from '../ContactListItem/ContactListItem';
 import List from '@mui/material/List';
+import { Typography } from '@mui/material';
 
 export const ContactsList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
@@ -21,7 +22,7 @@ export const ContactsList = () => {
       ) : (
         <List>
           {filteredContacts.length === 0 && !error ? (
-            <p>The phonebook is empty.</p>
+            <Typography>The phonebook is empty</Typography>
           ) : (
             filteredContacts.map(({ id, name, number }) => (
               <ContactListItem key={id} contact={{ id, name, number }} />
